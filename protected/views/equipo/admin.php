@@ -30,7 +30,8 @@ $this->menu=array(
 		'EQU_logo',
 		*/
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template'=>'{update}{delete}',
 		),
 	),
 )); ?>

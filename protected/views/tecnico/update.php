@@ -3,9 +3,9 @@
 /* @var $model Tecnico */
 
 $this->breadcrumbs=array(
-	'Técnicos'=>array('index'),
-	$model->TEC_correl=>array('view','id'=>$model->TEC_correl),
-	'Editar',
+	'Técnicos'=>array('admin'),
+	$model->TEC_nombre." ".$model->TEC_apellidoPat=>array('admin','id'=>$model->TEC_correl),
+	'Actualizar',
 );
 
 $this->menu=array(

@@ -2,10 +2,10 @@
 /* @var $this LesionController */
 /* @var $model Lesion */
 
-$modelo= new futbolista;
+$modelo= new Futbolista;
 $model->LES_correl=$_GET['id'];
 $model=Lesion::model()->findByPk($model->LES_correl);
-$modelo=futbolista::model()->findByPk($model->LES_futCorrel);
+$modelo=Futbolista::model()->findByPk($model->LES_futCorrel);
 
 $this->breadcrumbs=array(
 	'Futbolista'=>array('futbolista/admin'),

@@ -32,10 +32,13 @@ class Lesion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('LES_futCorrel', 'required'),
+			array('LES_futCorrel, LES_glosa, LES_fecha, LES_tiempoReposo', 'required'),
 			array('LES_futCorrel', 'length', 'max'=>10),
 			array('LES_glosa', 'length', 'max'=>45),
 			array('LES_fecha, LES_descripcion, LES_tiempoReposo', 'safe'),
+			array('LES_fecha, LES_tiempoReposo', 'date', 'format'=>'yyyy-M-d', 'message'=>'El formato de fecha es: [YYYY-M-D]'),
+			array('LES_fecha','compare','compareValue'=>date('Y-m-d'),'operator'=>'=='),
+			array('LES_tiempoReposo','compare','compareValue'=>date('Y-m-d'),'operator'=>'>'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('LES_correl, LES_futCorrel, LES_glosa, LES_fecha, LES_descripcion, LES_tiempoReposo', 'safe', 'on'=>'search'),

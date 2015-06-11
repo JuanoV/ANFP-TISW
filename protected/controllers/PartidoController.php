@@ -132,7 +132,7 @@ class PartidoController extends Controller
 	{
 		$model=new Partido('search');
 		$model->unsetAttributes();  // clear any default values
-		$model->PAR_fecha=$id;
+		// $model->PAR_fecha=$id;
 		if(isset($_GET['Partido']))
 			$model->attributes=$_GET['Partido'];
 

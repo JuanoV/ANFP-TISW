@@ -33,11 +33,16 @@ class Tecnico extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('TEC_nombre, TEC_apellidoPat, TEC_apellidoMat, TEC_nacionalidad', 'length', 'max'=>45),
+			array('TEC_nombre, TEC_apellidoPat, TEC_apellidoMat', 'length', 'max'=>45),
+			array('TEC_nombre, TEC_apellidoPat, TEC_apellidoMat', 'required','message'=>'Por favor, indíquenos: {attribute}.'),
+			array('TEC_nombre, TEC_apellidoPat, TEC_apellidoMat', 'match','pattern' => '/^[a-zA-Z\s]+$/','message'=>'El campo {attribute} sólo puede ser texto.'),
+			
 			array('TEC_fechaNac', 'safe'),
+			array('TEC_fechaNac', 'date', 'format'=>'yyyy-M-d', 'message'=>'El formato de fecha es: [YYYY-M-D]'),
+			array('TEC_fechaNac','compare','compareValue'=>date('Y-m-d'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('TEC_correl, TEC_nombre, TEC_apellidoPat, TEC_apellidoMat, TEC_fechaNac, TEC_nacionalidad', 'safe', 'on'=>'search'),
+			array('FUT_correl, FUT_nombre, FUT_apellidoPat, FUT_apellidoMat, FUT_fechaNacimiento, FUT_nacionalidad, FUT_estado, FUT_estadoCivil', 'safe', 'on'=>'search'),
 		);
 	}
 

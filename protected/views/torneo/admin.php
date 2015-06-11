@@ -25,12 +25,13 @@ $this->menu=array(
 		array('name'=>'TOR_division',
 			'value'=>'Division::model()->findByPk($data->TOR_division)->DIV_nombre'),
 		'TOR_agno',
-		'TOR_periodo',
+		// 'TOR_periodo',
 		'TOR_premio',
 		'TOR_ganador',
 		'TOR_tipo',
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template'=>'{update}{delete}',
 		),
 	),
 )); ?>

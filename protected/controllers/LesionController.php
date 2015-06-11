@@ -70,8 +70,9 @@ class LesionController extends Controller
 		if(isset($_POST['Lesion']))
 		{
 			$model->attributes=$_POST['Lesion'];
+			$model->LES_futCorrel=$id;
 			if($model->save())
-				$this->redirect(array('admin','id'=>$model->LES_correl));
+				$this->redirect(array('admin','id'=>$id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +96,7 @@ class LesionController extends Controller
 		{
 			$model->attributes=$_POST['Lesion'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->LES_correl));
+				$this->redirect(array('admin','id'=>$id));
 		}
 
 		$this->render('update',array(

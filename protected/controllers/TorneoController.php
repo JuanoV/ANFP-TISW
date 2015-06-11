@@ -105,7 +105,7 @@ class TorneoController extends Controller
 						$modelo->TOR_nombre=$model->TOR_nombre;
 						$modelo->TOR_agno=$model->TOR_agno;
 						$modelo->save();
-						$this->integrar($model,2,$modelo);
+						$this->integrar($modelos,2,$modelo);
 						$flag=1;
 						// $this->redirect(array('view','id'=>$modelos->TOR_correl));
 					}
@@ -259,9 +259,9 @@ class TorneoController extends Controller
    				$apertura = new Partido;
     			$clausura = new Partido;
     			$apertura->PAR_torCorrel = $model->TOR_correl;
-    			$apertura->PAR_fecha = $fecha;
+    			$apertura->PAR_fecha = $fecha+1;
    				$clausura->PAR_torCorrel = $modelo->TOR_correl;
-   				$clausura->PAR_fecha = $fecha+count($rounds);
+   				$clausura->PAR_fecha = $fecha+1+count($rounds);
     			$local->PART_equCorrel=$play["Home"]->EQU_correl;
     			$visita->PART_equCorrel=$play["Away"]->EQU_correl;
     			$local->PART_posicion=$array[0];

@@ -18,17 +18,17 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->labelEx($model,'INT_torCorrel'); ?>
 		<?php echo $form->textField($model,'INT_torCorrel',array('disabled' => true)); ?>
 		<?php echo $form->error($model,'INT_torCorrel'); ?>
-	</div>
+	</div> -->
 
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->labelEx($model,'INT_equCorrel'); ?>
 		<?php echo $form->textField($model,'INT_equCorrel',array('disabled' => true)); ?>
 		<?php echo $form->error($model,'INT_equCorrel'); ?>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'INT_puntaje'); ?>

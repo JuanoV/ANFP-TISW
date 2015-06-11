@@ -2,9 +2,8 @@
 /* @var $this TecnicoController */
 /* @var $model Tecnico */
 
-$this->breadcrumbs=array(
-	'Técnicos'=>array('index'),
-	'Administrar',
+$this->breadcrumbs=array(	
+	'Técnicos',
 );
 
 $this->menu=array(

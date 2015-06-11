@@ -79,7 +79,8 @@ class EquipoController extends Controller
 				$this->redirect('create',array(
 				'model'=>$model,
 				));
-				echo "Equipo debe pertenecer a una division";
+				echo BsHtml::alert(BsHtml::ALERT_COLOR_WARNING, BsHtml::bold(
+			'Lo sentimos !') . 'El equipo debe pertenecer a una division.');
 				// die();
 			}
 			/*if(isset($_POST['Logo'])){
@@ -185,18 +186,22 @@ class EquipoController extends Controller
 	{
 		$model=new Equipo('search');
 		$model->unsetAttributes();
-		$var= Equipo::model()->findAllByAttributes(array());
-		var_dump($this->divActual($var[0]));
-		die();
-		foreach ($var as $key => $value) {
-			if (Pertenece::model()->findByPk($this->divActual($value))->PER_divCorrel==1) {
-				echo $value->EQU_nombre;
-			}
-		}
-		$hol=array('id'=>null,'agno'=>null);
-		var_dump($hol);
+		// $var= Equipo::model()->findAllByAttributes(array(
+		// 	'EQU_correl'=>Pertenece::model()->findByAttributes(array(
+		// 		'PER_fecha'=>DATE('Y'),'PER_divCorrel'=>$id)->PER_equCorrel)));
+		// var_dump($var);
+		// die();
+		// var_dump($this->divActual($var[0]));
+		// die();
+		// foreach ($var as $key => $value) {
+		// 	if (Pertenece::model()->findByPk($this->divActual($value))->PER_divCorrel==1) {
+		// 		echo $value->EQU_nombre;
+		// 	}
+		// }
+		// $hol=array('id'=>null,'agno'=>null);
+		// var_dump($hol);
 		// var_dump(max($hol[0...7]->EQU_correl));
-		die();
+		// die();
 		// if ($id=1) {
 		// 	if (Equipo::model()->findByAttributes(array(EQU))) {
 		// 		# code...

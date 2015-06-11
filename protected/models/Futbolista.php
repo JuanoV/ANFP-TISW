@@ -39,15 +39,18 @@ class Futbolista extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('FUT_nombre, FUT_apellidoPat, FUT_apellidoMat, FUT_nacionalidad', 'length', 'max'=>45),
+			array('FUT_nombre, FUT_apellidoPat, FUT_apellidoMat', 'length', 'max'=>45),
+			array('FUT_nombre, FUT_apellidoPat, FUT_apellidoMat', 'required','message'=>'Por favor, indíquenos: {attribute}.'),
+			array('FUT_nombre, FUT_apellidoPat, FUT_apellidoMat', 'match','pattern' => '/^[a-zA-Z\s]+$/','message'=>'El campo {attribute} sólo puede ser texto.'),
 			array('FUT_estado, FUT_estadoCivil', 'length', 'max'=>10),
 			array('FUT_fechaNacimiento', 'safe'),
+			array('FUT_fechaNacimiento', 'date', 'format'=>'yyyy-M-d', 'message'=>'El formato de fecha es: [YYYY-M-D]'),
+			array('FUT_fechaNacimiento','compare','compareValue'=>date('Y-m-d'),'operator'=>'<='),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('FUT_correl, FUT_nombre, FUT_apellidoPat, FUT_apellidoMat, FUT_fechaNacimiento, FUT_nacionalidad, FUT_estado, FUT_estadoCivil', 'safe', 'on'=>'search'),
 		);
 	}
-
 	/**
 	 * @return array relational rules.
 	 */
