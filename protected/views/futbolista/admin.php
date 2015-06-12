@@ -16,6 +16,7 @@ $this->menu=array(
 
 <h1>Administrar Futbolistas</h1>
 
+
 <?php $this->widget('bootstrap.widgets.BsGridView', array(
 	'id'=>'futbolista-grid',
 	'dataProvider'=>$model->search(),
