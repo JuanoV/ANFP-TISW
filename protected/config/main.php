@@ -60,7 +60,7 @@ return array(
 				 // NO OLVIDES PONER EN FALSE TRAS INSTALAR
 				 'debug'=>true,
 				 'rbacSetupEnabled'=>true,
-				 'allowUserAlways'=>false,
+				 'allowUserAlways'=>true,
 
 				// MIENTRAS INSTALAS..PONLO EN: false
 				// lee mas abajo respecto a 'Encriptando las claves'
@@ -150,10 +150,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=TISW_GRUPO5',
+			'connectionString' => 'mysql:host=localhost;dbname=anfp',
 			'emulatePrepare' => true,
-			'username' => 'TISW_GRUPO5',
-			'password' => 'qaz123_*',
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		
