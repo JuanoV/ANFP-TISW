@@ -80,13 +80,14 @@ class Partido extends CActiveRecord
 			'PAR_correl' => 'ID',
 			'PAR_estCorrel' => 'Estadio',
 			'PAR_torCorrel' => 'Torneo',
-			'PAR_programacion' => 'Fechas',
+			'PAR_programacion' => 'Fecha',
 			'PAR_hora' => 'Hora',
-			'PAR_fecha' => 'Fecha',
+			'PAR_fecha' => 'Fechas',
 			'PAR_asistencia' => 'Asistencia',
 			'PAR_recaudo' => 'Recaudo',
 			'PAR_estado' => 'Estado',
 			'PAR_tiempo' => 'Tiempo',
+			'PAR_tipo' => 'Tipo',
 		);
 	}
 
@@ -118,6 +119,7 @@ class Partido extends CActiveRecord
 		$criteria->compare('PAR_recaudo',$this->PAR_recaudo);
 		$criteria->compare('PAR_estado',$this->PAR_estado,true);
 		$criteria->compare('PAR_tiempo',$this->PAR_tiempo,true);
+		$criteria->compare('PAR_tipo',$this->PAR_tipo,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -60,15 +60,37 @@ class PartidoController extends Controller
 	public function actionCreate()
 	{
 		$model=new Partido;
+		$local=new Equipo;
+		$visita= new Participa;
+		$locale= new Participa;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Partido']))
 		{
+			if(isset($_POST['Equipo'])&&isset($_POST['Participa'])){
+				
+				if ($local->EQU_correl==$visita->PART_equCorrel) {
+						echo BsHtml::alert(BsHtml::ALERT_COLOR_WARNING, BsHtml::bold(
+						'Lo sentimos !') . 'Debe ingresar equipos diferentes.');
+						$this->redirect('create',array(
+						'model'=>$model,
+						));
+				}
+				
+			}
+			$locale->PART_equCorrel=$local_EQU_correl;
+			$locale->PART_parCorrel=$model->PAR_correl;
+			$visita->PART_parCorrel=$model->PAR_correl;
+			$locale->PART_posicion=1;
+			$visita->PART_posicion=2;
 			$model->attributes=$_POST['Partido'];
-			if($model->save())
+			if($model->save()){
+				$locale->save();
+				$visita->save();
 				$this->redirect(array('view','id'=>$model->PAR_correl));
+			}
 		}
 
 		$this->render('create',array(

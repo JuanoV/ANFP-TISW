@@ -3,12 +3,11 @@
 /* @var $model Partido */
 
 $this->breadcrumbs=array(
-	'Partidos'=>array('admin'),
 	'Registrar',
 );
 
 $this->menu=array(
-	array('label'=>'Cancelar', 'url'=>array('admin')),
+	array('label'=>'Cancelar', 'url'=>array('site/index')),
 );
 ?>
 

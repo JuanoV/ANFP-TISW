@@ -152,8 +152,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=TISW_GRUPO5',
 			'emulatePrepare' => true,
-			'username' => 'TISW_GRUPO5',
-			'password' => 'qaz123_*',
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		

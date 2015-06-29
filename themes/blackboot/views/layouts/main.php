@@ -63,6 +63,11 @@
                 					'label' => 'Partidos',
                 					'url' => array('/partido/index')
                 					),
+            					BsHtml::menuDivider(),
+            				array(
+                				'label' => 'Registrar Partido',
+                				'url' => array('/Partido/create'),
+            						),
             					
         					)
     ),

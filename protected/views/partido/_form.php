@@ -2,6 +2,8 @@
 /* @var $this PartidoController */
 /* @var $model Partido */
 /* @var $form CActiveForm */
+$local= new Equipo;
+$visita= new Participa;
 ?>
 
 <div class="form">
@@ -21,9 +23,10 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'PAR_estCorrel'); ?>
-		<?php echo $form->textField($model,'PAR_estCorrel',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'PAR_estCorrel'); ?>
+		<?php 	echo $form->dropDownListControlGroup($model,'PAR_estCorrel',
+				CHtml::listData(Estadio::model()->findAllByAttributes(array('EST_estado'=>1)),'EST_correl','EST_nombre'),	
+         		array('empty' => 'Seleccione Estadio',
+        ));?>
 	</div>
 
 	<div class="row">
@@ -38,11 +41,27 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->dropDownListControlGroup($model, 'PAR_fecha', array(
+	<!-- 	<?php echo $form->dropDownListControlGroup($model, 'PAR_fecha', array(
         '1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6','7' => '7', '8' => '8','9' => '9', '10' => '10','11' => '11',
          '12' => '12','13' => '13', '14' => '14','15' => '15', '16' => '16','17' => '17'
         ), array('empty' => 'Seleccione Fecha' ));  ?>
-		<?php echo $form->error($model,'PAR_fecha'); ?>
+		<?php echo $form->error($model,'PAR_fecha'); ?> -->
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($local,"Local"); ?>
+		<?php 	echo $form->dropDownList($local,'EQU_correl',
+				CHtml::listData(Equipo::model()->findAll(),'EQU_correl','EQU_nombre'),	
+         		array('empty' => 'Seleccione Equipo',
+        ));
+
+        ?>
+	</div>
+	<div class="row">
+		<?php 	echo $form->labelEx($visita,"Visita"); ?>
+		<?php 	echo $form->dropDownList($visita,'PART_equCorrel',
+				CHtml::listData(Equipo::model()->findAll(),'EQU_correl','EQU_nombre'),	
+         		array('empty' => 'Seleccione Equipo',
+        ));?>
 	</div>
 
 	<div class="row">
@@ -64,10 +83,16 @@
 		<?php echo $form->error($model,'PAR_estado'); ?>
 	</div>
 
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->labelEx($model,'PAR_tiempo'); ?>
 		<?php echo $form->textField($model,'PAR_tiempo'); ?>
 		<?php echo $form->error($model,'PAR_tiempo'); ?>
+	</div> -->
+
+	<div class="row">
+			<?php echo $form->dropDownListControlGroup($model,'PAR_tipo',array(
+			'2'=>'Internacional','3'=>'Amistoso'
+			),array('empty' => 'Seleccione Tipo' ));  ?>
 	</div>
 
 	<div class="row buttons">
