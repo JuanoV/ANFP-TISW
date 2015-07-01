@@ -3010,3 +3010,7 @@ HTTP_REFERER=http://localhost/yii/ANFP-TISW/
 REQUEST_URI=/yii/ANFP-TISW/index.php/Equipo/admin
 HTTP_REFERER=http://localhost/yii/ANFP-TISW/index.php/Equipo/admin
 ---
+2015/07/01 23:00:30 [error] [exception.CrugeException.401] action_equipo_create<br/>401
+REQUEST_URI=/yii/ANFP-TISW/index.php/Equipo/create
+HTTP_REFERER=http://localhost/yii/ANFP-TISW/
+---
