@@ -36,6 +36,16 @@
 <!-- Le fav and touch icons -->
 </head>
 <?php //echo Yii::app()->user->ui->displayErrorConsole(); ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+   $(document).on('ready',function()
+   {
+      $('#next').click(function()
+         {
+            $('#galeria-li:first').appendTo('#galeria:first');
+         });      
+   });
+</script>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
