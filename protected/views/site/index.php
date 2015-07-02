@@ -6,15 +6,18 @@ $this->pageTitle=Yii::app()->name;
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<center><h1>¡Noticias de esta semana!</h1>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+  
+	
+	
+	<div id="galeria">
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+	<ul id="galeria-ul-li">
+		<li id="galeria-li"><img src="http://i72.photobucket.com/albums/i182/Kruger182/Random%20weas/arg_zps0u4b5qkm.png"></li>
+		<li id="galeria-li"><img src="http://i72.photobucket.com/albums/i182/Kruger182/Random%20weas/semif_zpsntsjsgly.png"></li>
+		<li id="galeria-li"><img src="http://i72.photobucket.com/albums/i182/Kruger182/Random%20weas/tablapos_zpsjli5kbux.png"></li>
+	</ul>
+
+</div>
+<button id="next">Noticias</button></center>

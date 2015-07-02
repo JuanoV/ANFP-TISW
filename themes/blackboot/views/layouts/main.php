@@ -36,6 +36,16 @@
 <!-- Le fav and touch icons -->
 </head>
 <?php //echo Yii::app()->user->ui->displayErrorConsole(); ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+   $(document).on('ready',function()
+   {
+      $('#next').click(function()
+         {
+            $('#galeria-li:first').appendTo('#galeria:first');
+         });      
+   });
+</script>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
@@ -55,9 +65,9 @@
       						//array('label'=>'About','url'=>array('/site/page', 'view'=>'about')),
       						//array('label'=>'Contact', 'url'=>array('/site/contact')),
       						//array('label' => 'Help','url' => '#'),
-      						array('label'=>'Futbolistas', 'url'=>array('/futbolista/admin')),
-      						array('label'=>'Técnicos', 'url'=>array('/tecnico/admin')),
-      						array('label' => 'Partidos','items' => array(
+      						array('label'=>'Futbolistas', 'url'=>array('/futbolista/admin'), 'visible'=>!Yii::app()->user->isGuest),
+      						array('label'=>'Técnicos', 'url'=>array('/tecnico/admin'), 'visible'=>!Yii::app()->user->isGuest, ),
+      						array('label' =>'Partidos','items' => array(
             					// array('label'=>'Fechas', 'url'=>array('/participa/index')),
             					array(
                 					'label' => 'Partidos',
@@ -79,7 +89,7 @@
             				BsHtml::menuDivider(),
             				array(
                 				'label' => 'Registrar Equipo',
-                				'url' => array('/Equipo/create'),
+                				'url' => array('/Equipo/create'),'visible'=>!Yii::app()->user->isGuest
             						),
             				// array('label'=>'Historial', 'url'=>array('/torneo/admin'))
         						)
@@ -112,7 +122,7 @@
             				BsHtml::menuDivider(),
             				array(
                 				'label' => 'Registrar Apertura/Clausura',
-                				'url'=>array('/torneo/create')
+                				'url'=>array('/torneo/create'), 'visible'=>!Yii::app()->user->isGuest
             						),
             				array('label'=>'Todos los Torneos', 'url'=>array('/torneo/admin'))
         						)

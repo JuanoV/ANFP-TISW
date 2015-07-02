@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Registrar Torneo', 'url'=>array('create')),
+	array('label'=>'Registrar Torneo', 'url'=>array('create'), 'visible'=>!Yii::app()->user->isGuest),
 );
 ?>
 

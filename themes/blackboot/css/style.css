@@ -20,6 +20,20 @@ div.cont {
 	padding-bottom:30px;
  }
 
+
+#galeria{
+width:600px;
+height:380px;
+overflow:hidden;
+}
+#galeria-ul-li{
+  padding:0px;
+  margin:0px;
+}
+#galeria-li{
+  float:left;
+  list-style:none;
+}
 .sidebar-nav {
 	padding: 9px 0;
   }
@@ -46,6 +60,8 @@ p, div {
   font-size:13px;
 }
 
+
+}
 div.portlet-decoration {
 color: #fff;
 background-color: #000;
