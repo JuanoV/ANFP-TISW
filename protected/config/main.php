@@ -158,7 +158,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=anfp',
+			'connectionString' => 'mysql:host=localhost;dbname=tisw_grupo5',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
