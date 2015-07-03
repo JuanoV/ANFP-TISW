@@ -80,10 +80,10 @@
                 					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1))!=null,
                 					),
             					BsHtml::menuDivider(),
-            				array(
-                				'label' => 'Registrar Partido',
-                				'url' => array('/Partido/create'),
-            						),
+            				// array(
+                // 				'label' => 'Registrar Partido',
+                // 				'url' => array('/Partido/create'),
+            				// 		),
             					
         					)
     ),

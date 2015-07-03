@@ -3,7 +3,7 @@
 	define('host', 'localhost');
 	define('user', 'root'); //ii_user
 	define('password','');
-	define('database','anfp');		
+	define('database','tisw_grupo5');		
 	}
 	
 

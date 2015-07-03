@@ -22,12 +22,12 @@ $visita= new Participa;
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+	<!-- <div class="row">
 		<?php 	echo $form->dropDownListControlGroup($model,'PAR_estCorrel',
 				CHtml::listData(Estadio::model()->findAllByAttributes(array('EST_estado'=>1)),'EST_correl','EST_nombre'),	
          		array('empty' => 'Seleccione Estadio',
         ));?>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->dateFieldControlGroup($model,'PAR_programacion'); ?>
@@ -47,7 +47,7 @@ $visita= new Participa;
         ), array('empty' => 'Seleccione Fecha' ));  ?>
 		<?php echo $form->error($model,'PAR_fecha'); ?> -->
 	</div>
-	<div class="row">
+<!-- 	<div class="row">
 		<?php echo $form->labelEx($local,"Local"); ?>
 		<?php 	echo $form->dropDownList($local,'EQU_correl',
 				CHtml::listData(Equipo::model()->findAll(),'EQU_correl','EQU_nombre'),	
@@ -55,14 +55,14 @@ $visita= new Participa;
         ));
 
         ?>
-	</div>
-	<div class="row">
+	</div> -->
+<!-- 	<div class="row">
 		<?php 	echo $form->labelEx($visita,"Visita"); ?>
 		<?php 	echo $form->dropDownList($visita,'PART_equCorrel',
 				CHtml::listData(Equipo::model()->findAll(),'EQU_correl','EQU_nombre'),	
          		array('empty' => 'Seleccione Equipo',
         ));?>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'PAR_asistencia'); ?>
@@ -81,7 +81,7 @@ $visita= new Participa;
         '1' => 'En espera','2'=>'En juego','3'=>'Terminado'
         ), array('empty' => 'Seleccione Estado' ));  ?>
 		<?php echo $form->error($model,'PAR_estado'); ?>
-	</div>
+	</div> 
 
 <!-- 	<div class="row">
 		<?php echo $form->labelEx($model,'PAR_tiempo'); ?>
@@ -89,11 +89,11 @@ $visita= new Participa;
 		<?php echo $form->error($model,'PAR_tiempo'); ?>
 	</div> -->
 
-	<div class="row">
+<!-- 	<div class="row">
 			<?php echo $form->dropDownListControlGroup($model,'PAR_tipo',array(
 			'2'=>'Internacional','3'=>'Amistoso'
 			),array('empty' => 'Seleccione Tipo' ));  ?>
-	</div>
+	</div> -->
 
 	<div class="row buttons">
 		<?php echo BsHtml::submitButton('Aceptar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>

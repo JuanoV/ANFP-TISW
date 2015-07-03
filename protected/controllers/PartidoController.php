@@ -114,7 +114,7 @@ class PartidoController extends Controller
 		{
 			$model->attributes=$_POST['Partido'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->PAR_correl));
+				$this->redirect(array('index','id'=>1,'id2'=>1));
 		}
 
 		$this->render('update',array(
