@@ -70,8 +70,14 @@
       						array('label' =>'Partidos','items' => array(
             					// array('label'=>'Fechas', 'url'=>array('/participa/index')),
             					array(
-                					'label' => 'Partidos',
-                					'url' => array('/partido/index')
+                					'label' => 'Partidos Liga A'." ".DATE('Y'),
+                					'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>1))->TOR_correl))? array('/partido/index','id'=>1,'id2'=>1): array('/site/index'),
+                					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1))!=null,
+                					),
+            					array(
+                					'label' => 'Partidos Liga B'." ".DATE('Y'),
+                					'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>1))->TOR_correl))? array('/partido/index','id'=>1,'id2'=>2): array('/site/index'),
+                					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1))!=null,
                 					),
             					BsHtml::menuDivider(),
             				array(
@@ -86,6 +92,14 @@
                 					'label' => 'Equipos',
                 					'url' => array('/Equipo/admin'),
            			 			),
+           			 			// array(
+                		// 			'label' => 'Liga A',
+                		// 			'url' => array('/Equipo/admin','id'=>1),
+           			 			// ),
+           			 			// array(
+                		// 			'label' => 'Liga B',
+                		// 			'url' => array('/Equipo/admin','id'=>2),
+           			 			// ),
             				BsHtml::menuDivider(),
             				array(
                 				'label' => 'Registrar Equipo',
@@ -98,22 +112,22 @@
     							
       						array('label' => 'Torneos','items' => array(
             					 array(
-                	 				'label' => 'Primera A Apertura'." ".DATE('Y'),
+                	 				'label' => 'Liga A Apertura'." ".DATE('Y'),
                 	 				'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>1))->TOR_correl))? array('/integra/admin','id'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>1))->TOR_correl): array('/site/index'),
                 					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1))!=null,
            			 		 	),
             					  array(
-                	 				'label' => 'Primera A Clausura'." ".DATE('Y'),
+                	 				'label' => 'Liga A Clausura'." ".DATE('Y'),
                 	 				'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>1))->TOR_correl))? array('/integra/admin','id'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>1))->TOR_correl): array('/site/index'),
                 					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>1))!=null,
            			 		 	),
             					  array(
-                	 				'label' => 'Primera B Apertura'." ".DATE('Y'),
+                	 				'label' => 'Liga B Apertura'." ".DATE('Y'),
                 	 				'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>2))->TOR_correl))? array('/integra/admin','id'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>2))->TOR_correl): array('/site/index'),
                 					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>1,'TOR_division'=>2))!=null,
            			 		 	),
             					  array(
-                	 				'label' => 'Primera B Clausura'." ".DATE('Y'),
+                	 				'label' => 'Liga B Clausura'." ".DATE('Y'),
                 	 				'url'=>(isset(Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>2))->TOR_correl))? array('/integra/admin','id'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>2))->TOR_correl): array('/site/index'),
                 					'visible'=>Torneo::model()->findByAttributes(array('TOR_agno'=>DATE('Y'),'TOR_tipo'=>2,'TOR_division'=>2))!=null,
            			 		 	),
