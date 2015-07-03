@@ -20,8 +20,22 @@
         <td>
              <center><h3><b><?php echo $equipo1->EQU_nombre ?></b><br></h3></center>
         </td>
-        <td>
-
+        <td><center>
+            <?php 
+                echo BsHtml::buttonToolbar(array(
+                    array(
+                        'items' => array(
+                            array(
+                            'label'=>'Editar',
+                            'color' => BsHtml::BUTTON_COLOR_DANGER,
+                            'url' =>array('admin','id'=>$data->PAR_correl),
+                             ),
+                        ),
+                    )
+                )
+            )
+            ?>
+        </center>
         </td>
         <td>
              <center><h3><b><?php echo $equipo2->EQU_nombre ?></b><br></h3></center>
