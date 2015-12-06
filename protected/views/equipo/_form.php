@@ -63,7 +63,7 @@ $log= new Logo;
 
 	<div class="row">
 		<br>
-	   <?php echo CHtml::activeFileField($log,'LOG_url'); ?>
+	   <?php echo CHtml::activeFileField($model,'EQU_url'); ?>
     </div>
 	<!-- <div>
 	 <input type="hidden" name="MAX_FILE_SIZE" value="30000000000" />

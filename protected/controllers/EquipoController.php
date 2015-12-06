@@ -61,7 +61,6 @@ class EquipoController extends Controller
 	{
 		$model=new Equipo;
 		$aux= new Pertenece;
-		$log= new Logo;
 
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
@@ -69,7 +68,9 @@ class EquipoController extends Controller
 		if(isset($_POST['Equipo']))
 		{
 			if (isset($_POST['Equipo'])) {
-				$log->LOG_url=CUploadedFile::getInstance($log,'LOG_url');
+				$model->EQU_url=CUploadedFile::getInstance($model,'EQU_url');
+				var_dump($model->EQU_url);
+				die();
 				
 			}
 			$model->attributes=$_POST['Equipo'];
@@ -81,19 +82,12 @@ class EquipoController extends Controller
 				));
 				echo BsHtml::alert(BsHtml::ALERT_COLOR_WARNING, BsHtml::bold(
 			'Lo sentimos !') . 'El equipo debe pertenecer a una division.');
-				// die();
 			}
-			/*if(isset($_POST['Logo'])){
-				$log->attributes=$_POST['Logo'];
-				echo($log);
-				var_dump($log);
-				die;
-			}*/
 			if($aux->PER_divCorrel!=null&&$model->save()){
-					$log->LOG_url->saveAs('images/'.$model->EQU_correl.'.png');
-					$log->LOG_nombre=$log->LOG_url;
-					$log->LOG_equCorrel=$model->EQU_correl;
-					$log->LOG_url=$model->EQU_correl;
+					$model->EQU_url->saveAs('images/'.$model->EQU_correl.'.png');
+					// $log->LOG_nombre=$log->LOG_url;
+					// $log->LOG_equCorrel=$model->EQU_correl;
+					// $log->LOG_url=$model->EQU_correl;
 					$aux->PER_equCorrel=$model->EQU_correl;
 					$aux->PER_fecha=date('Y');
 
